@@ -83,3 +83,69 @@ function abcd(): never {
 abcd();
 console.log("hey");
 
+//Type inference
+// Understanding type inference (automatically type assignment ke saath determine ho jata hai)
+// type annotations (colon lagakar type define karna)
+
+//Interfaces and Type Aliases
+- Defining interfaces
+- Using interfacses to define object shapes
+- Extending interfaces
+- Type aliasing
+- Intersection types
+
+- interface (basically for eg object ke liye deine kiya toh) konsi datatype values ayengi wo define karta hai
+ interface User {
+    name: string,
+    email: string,
+    password: string,
+    gender?: string
+ }
+
+ const obj = {
+    name: "hari",
+    email: "hari@gmail.com",
+    password: "abcd"
+ }
+
+ function abcd(obj: User) {}
+
+ abcd(if yaha object with same interface as User pass nahi kiya toh error ayega);
+
+ so, 
+ abcd({name: "hari", email: "hari@gmail.com", password: "abcd"});
+ //since gender field ke aage Question mark tha in interface so wo optional hai thus object mai if hum wo field pass nhi karenge toh bhi chalega, also if any field baakiyo mai se nhi pass kari toh bhi error and if extra pass kardi jo User interface mai nhi hai declared toh bhi error.
+
+ abcd({name: "hari", email: "hari@gmail.com", password: "abcd", gender: "Female"});
+
+ - extends in interface
+ // matlab jaise if mujhe already defined interface ki toh saari properties chaiye hi plus kuch or fields bhi chahiye toh hum wo mention karenge in extends
+
+ interface Admin extends User {
+    admin: boolean;
+ }
+
+ // do interfaces of the same name are merged matlab if do interface define kare of same name but different properties toh while defining we will be able to access all the properties defined in the interfaces.
+
+ // type aliasing mai basically hum types ko deine ek value mai store kar lete hai
+
+ type value = string | number | null;
+ let a: value;
+
+ //how are type and interfaces diff?
+ - interfaces with the same name were being merged but in type error aajati hai
+ - type ka kaam hai type create karna using primitive yaani number, string etc
+ - interface ka kaam hai object ka shape bnana
+
+ //Classes & Objects
+ - class definitions
+ - Constructors
+ - Access Modifiers (public, private, protected)
+ - Read Only properties
+ - Optional properties
+ parameters properties
+ - getters & Setters
+ - Static members
+ - Abstract classes and methods
+
+ 
